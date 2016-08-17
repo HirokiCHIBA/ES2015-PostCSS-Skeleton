@@ -16,17 +16,17 @@ export const webpack = {
   },
   devtool: 'source-map',
   resolve: {
-    extensions: ['', '.js'],
+    extensions: ['', '.js', '.jsx'],
   },
   module: {
     loaders: [
       {
-        test: /\.js$/,
+        test: /\.js[x]?$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
           cacheDirectory: true,
-          presets: ['es2015'],
+          presets: ['react', 'es2015'],
         },
       },
       {

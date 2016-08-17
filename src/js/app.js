@@ -1,5 +1,8 @@
-import Module from './components/module';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Module from './components/Module';
 
-const module = new Module();
-
-document.write(module.message);
+ReactDOM.render(
+  <Module />,
+  document.getElementById('container')
+);
