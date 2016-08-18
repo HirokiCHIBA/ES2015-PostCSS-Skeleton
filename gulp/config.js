@@ -7,6 +7,8 @@ const dest = './build';
 const src = './src';
 // Relative path
 const relativeSrcPath = path.relative('.', src);
+// Static source path
+const www = `${src}/www/`;
 
 export const webpack = {
   entry: `${src}/js/app.js`,
@@ -52,8 +54,10 @@ export const webpack = {
 
 export const copy = {
   src: [
-    `${src}/www/index.html`,
+    `${www}/*.html`,
+    `${www}/assets/**/**`,
   ],
+  base: { base: www },
   dest,
 };
 
