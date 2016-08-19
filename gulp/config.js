@@ -28,7 +28,8 @@ export const webpack = {
         loader: 'babel-loader',
         query: {
           cacheDirectory: true,
-          presets: ['react', 'es2015', 'stage-0'],
+          presets: ['react', 'es2015'],
+          plugins: ['transform-class-properties'],
         },
       },
       {
