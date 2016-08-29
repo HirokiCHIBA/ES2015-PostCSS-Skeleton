@@ -1,0 +1,120 @@
+html, body {
+    height: 100%;
+}
+
+#container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.main-view {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    .jumbotron {
+        margin-top: 100px;
+    }
+
+    .btn-group-justified {
+        display: flex;
+
+        .btn {
+            flex: 1;
+        }
+    }
+}
+
+.sidebar {
+    width: 450px;
+}
+
+.answer-form {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow: scroll;
+}
+
+.answer-image-box, .nav-box {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 440px;
+    width: 440px;
+    margin: 5px;
+
+    .answer-no {
+        height: 26px;
+        margin: -420px 0 394px 10px;
+    }
+
+    .caption {
+        padding: 5px 0 0;
+    }
+
+    &.answerd {
+        padding-bottom: 0px;
+
+        .btn-group-justified {
+            border-bottom: 4px #5cb85c solid;
+        }
+    }
+}
+
+.answer-form-blank {
+    align-items: stretch;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 100%;
+    width: 100%;
+    margin-left: -450px;
+
+    .well {
+        margin: 5px 10px 5px 455px;
+        height: 479px;
+        padding: 0;
+    }
+}
+
+.answer-form-nav {
+    text-align: center;
+
+    .pagination, .pager {
+        margin: 5px;
+    }
+}
+
+.nav-box {
+    .nav-group {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .control-label {
+            flex: 1;
+            text-align: right;
+        }
+
+        .control-label + * {
+            flex: 8;
+        }
+
+        & > * {
+            margin: 0;
+        }
+
+        * + * {
+            margin-left: 5px;
+        }
+    }
+
+    .nav-group + .nav-group {
+        margin-top: 5px;
+    }
+
+    .progress-bar {
+        overflow: hidden;
+    }
+}
