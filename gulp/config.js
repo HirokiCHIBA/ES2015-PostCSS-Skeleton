@@ -54,8 +54,10 @@ export const webpack = {
 
 export const copy = {
   src: [
-    `${www}/*.html`,
-    `${www}/assets/**/**`,
+    `${www}/**/*`,
+    `${www}/**/.*`,
+    `${www}/.**/*`,
+    `${www}/.**/.*`,
   ],
   base: { base: www },
   dest,
