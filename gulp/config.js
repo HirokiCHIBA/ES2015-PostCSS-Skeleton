@@ -74,7 +74,6 @@ export default {
   js: {
     src: `${src}/js/**`,
     dest: `${dest}/js`,
-    uglify: false,
   },
   webpack,
   copy,
