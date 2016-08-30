@@ -219,7 +219,7 @@ export default class MainView extends React.Component {
           onClickSave       = {this.onClickSave.bind(this)}
           onClickSubmit     = {this.onClickSubmit.bind(this)}
         />
-        <div>
+        <div className="answer-form-wrapper">
           <AnswerForm
             ref           = "answerForm"
             questionNo    = {questionNo}

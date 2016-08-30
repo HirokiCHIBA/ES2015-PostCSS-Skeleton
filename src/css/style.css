@@ -10,8 +10,8 @@ html, body {
 
 .main-view {
     display: flex;
-    justify-content: center;
     align-items: flex-start;
+    overflow: hidden;
 
     .jumbotron {
         margin-top: 100px;
@@ -28,6 +28,10 @@ html, body {
 
 .sidebar {
     width: 450px;
+}
+
+.answer-form-wrapper {
+    overflow: hidden;
 }
 
 .answer-form {
