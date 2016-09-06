@@ -1,29 +1,20 @@
-ES2015-PostCSS-Skeleton
+Mass-images-evaluator
 ===
-This is a skeleton project of frontend development for my personal use.
+A webapp to evaluate a lot of images while comparing with an example.  
+This app was made for run on Apache HTTP server.
 
-Usage
+Build
 ---
-This project uses Gulp as a task runner. So you should install a gulp command first.
-
+Before using this application, you should build source files with following commands.
 ```sh
 npm install -g gulp
 npm install
+gulp build
 ```
 
-Also, this project uses Bower to resolve dependencies.
-
-```sh
-npm install -g bower
-bower install
-```
-
-Tasks
+Usage
 ---
-This project contains the following tasks. These are able to use from shell with command `gulp [TASK]`.
-
-- **webpack**: Compile ES2015 (the results will be outputed to /build)
-- **css**: Compile PostCSS (the results will be outputed to /build)
-- **copy**: Copy static files to /build.
-- **build**: Run all above tasks.
-- **watch**: Run above task automatically when source files updated.
+1. Prepare images to be evaluated and the example.
+2. Prepare JSON files that descrives questions, datasets, answers, and the order.
+3. Run build.
+4. Place files under `build/` to your Apache server.
