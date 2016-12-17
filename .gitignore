@@ -1,0 +1,4 @@
+node_modules/
+build/
+src/www/api/data/
+src/www/assets/
