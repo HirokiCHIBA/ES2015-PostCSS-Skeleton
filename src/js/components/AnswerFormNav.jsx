@@ -5,6 +5,9 @@ export default class MainView extends React.Component {
   static propTypes = {
     questionNo:       React.PropTypes.number,
     dataNo:           React.PropTypes.number,
+    questionNum:      React.PropTypes.number,
+    dataNum:          React.PropTypes.number,
+    answerNum:        React.PropTypes.number,
     onSelectAnswerNo: React.PropTypes.func,
     onSelectPrevData: React.PropTypes.func,
     onSelectNextData: React.PropTypes.func,
@@ -54,7 +57,7 @@ export default class MainView extends React.Component {
           next
           ellipsis
           boundaryLinks
-          items      = {20}
+          items      = {this.props.answerNum}
           maxButtons = {8}
           activePage = {this.state.answerNo}
           onSelect   = {this.props.onSelectAnswerNo}
@@ -69,7 +72,7 @@ export default class MainView extends React.Component {
           </Pager.Item>
           {' '}
           <Pager.Item
-            disabled = {questionNo == 3 && dataNo == 9}
+            disabled = {questionNo == this.props.questionNum && dataNo == this.props.dataNum - 1}
             onSelect = {this.props.onSelectNextData}
           >
             次のデータへ &rarr;

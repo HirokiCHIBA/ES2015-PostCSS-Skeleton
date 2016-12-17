@@ -232,6 +232,9 @@ export default class MainView extends React.Component {
             ref              = "answerFormNav"
             questionNo       = {questionNo}
             dataNo           = {dataNo}
+            questionNum      = {Object.keys(this.order).length}
+            dataNum          = {Object.keys(this.order[questionNo]).length}
+            answerNum        = {this.order[questionNo][dataID].length}
             onSelectAnswerNo = {this.onSelectAnswerNo.bind(this)}
             onSelectPrevData = {this.onSelectPrevData.bind(this)}
             onSelectNextData = {this.onSelectNextData.bind(this)}

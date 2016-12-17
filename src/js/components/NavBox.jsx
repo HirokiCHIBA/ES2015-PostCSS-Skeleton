@@ -66,6 +66,9 @@ export default class NavBox extends React.Component {
     if (this.state.progress[questionNo] === undefined) {
       return <div className="nav-box"></div>;
     }
+
+    const questionNum = Object.keys(this.state.progress).length;
+    const dataNum = Object.keys(this.state.progress[questionNo]).length;
     const pageProgress = this.state.progress[questionNo][dataNo];
 
     return (
@@ -73,30 +76,35 @@ export default class NavBox extends React.Component {
         <img src={this.props.src} alt={this.props.answerNo} />
         <h3 className="answer-no">見本</h3>
         <div className="caption">
-          <div className="nav-group">
-            <label className="control-label">問題</label>
-            <ButtonGroup justified>
-              {
-                [...Array(3).keys(0)].map((elem, index) => {
-                  const style = this.checkQuestionCompleted(index + 1) ? 'success' : 'default';
-                  return (
-                    <PointButton
-                      point         = {index + 1}
-                      selectedPoint = {questionNo}
-                      bsStyle       = {style}
-                      onClick       = {this.props.onClickQuestionNo}
-                      key           = {index}
-                    />
-                  );
-                })
-              }
-            </ButtonGroup>
-          </div>
+          {
+            questionNum > 1 ?
+            (
+              <div className="nav-group">
+                <label className="control-label">問題</label>
+                <ButtonGroup justified>
+                  {
+                    [...Array(questionNum).keys(0)].map((elem, index) => {
+                      const style = this.checkQuestionCompleted(index + 1) ? 'success' : 'default';
+                      return (
+                        <PointButton
+                          point         = {index + 1}
+                          selectedPoint = {questionNo}
+                          bsStyle       = {style}
+                          onClick       = {this.props.onClickQuestionNo}
+                          key           = {index}
+                        />
+                      );
+                    })
+                  }
+                </ButtonGroup>
+              </div>
+            ) : ""
+          }
           <div className="nav-group">
             <label className="control-label">データ</label>
             <ButtonGroup justified>
               {
-                [...Array(10).keys(0)].map((elem, index) => {
+                [...Array(dataNum).keys(0)].map((elem, index) => {
                   const style = this.checkDataCompleted(index) ? 'success' : 'default';
                   return (
                     <PointButton
@@ -124,7 +132,7 @@ export default class NavBox extends React.Component {
               onClick = {this.props.onClickClear}
               bsStyle = "link"
             >
-              問題 {questionNo} データ {dataNo + 1} の採点をリセット
+              { questionNum > 1 ? `問題 ${questionNo} ` : "" }データ {dataNo + 1} の採点をリセット
             </Button>
             <div>
               <Button
