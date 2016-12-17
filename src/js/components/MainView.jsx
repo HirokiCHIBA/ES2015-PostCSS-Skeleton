@@ -195,7 +195,7 @@ export default class MainView extends React.Component {
 
     if (this.state.submitted) {
       return (
-        <div className="main-view container">
+        <div className="thanks-message container">
           <Jumbotron>
             <p>
               ご協力いただきありがとうございました．<br />

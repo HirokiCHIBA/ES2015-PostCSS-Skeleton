@@ -26,6 +26,10 @@ html, body {
     }
 }
 
+.thanks-message {
+    max-width: 900px;
+}
+
 .sidebar {
     width: 450px;
 }
